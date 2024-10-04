@@ -1,0 +1,66 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import { Image } from "astro:assets";
+import contact from "../images/koreanbob.jpg";
+import am1 from "../images/b0b4d46e3.png";
+import am2 from "../images/turntable_styled.png";
+import am3 from "../images/hamham.png";
+---
+
+<MainLayout title="James Raymond Thompson: You have found him">
+  <h1 class="text-4xl font-bold mb-5">james raymond thompson</h1>
+  <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+    <div class="w-full md:w-1/2 mb-8 md:mb-0">
+      <Image
+        src={contact}
+        alt="James Bob"
+        class="w-full h-auto rounded-lg shadow-lg"
+      />
+    </div>
+    <div class="w-full md:w-1/2">
+      <h2 class="text-3xl font-extrabold text-gray-900 mb-4">Who is Bob?</h2>
+      <p class="text-gray-700 leading-relaxed mb-6">
+        We are broken people, a passionate distrust of authority, and a love of
+        bringing you the latest technophies.
+      </p>
+      <p class="text-gray-700 leading-relaxed mb-6">
+        Our mission is to empower and educate our leaders, helping them stay
+        awake. Whether you're a seasoned gurn-victim, a gadget enthusiast, or
+        just curious about the latest techno bangers, we've got you covered in
+        the sauce.
+      </p>
+    </div>
+  </div>
+
+  <!-- Team -->
+  <div class="mt-10">
+    <h2 class="text-3xl font-extrabold text-gray-900 mb-8">misc and other:</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+        <Image src={am1} alt="Setup Art" class="w-full h-auto" />
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Cheer</h3>
+          <p class="text-gray-700">The Choppa</p>
+        </div>
+      </div>
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+        <Image src={am2} alt="clean-up on aisle 69" class="w-full h-auto" />
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">
+            Spin horn-massive discx
+          </h3>
+          <p class="text-gray-700">The Changer</p>
+        </div>
+      </div>
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+        <Image src={am3} alt="More Setup Shart" class="w-full h-auto" />
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">
+            Noise fondler
+          </h3>
+          <p class="text-gray-700">The redneck hamster</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

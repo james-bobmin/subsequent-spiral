@@ -1,0 +1,67 @@
+---
+import { SEO } from "astro-seo";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../constants";
+
+const {
+  title = "Articles of pieces, bits and wisdom from a chronically online womble",
+} = Astro.props;
+
+interface Props {
+  title?: string;
+}
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <SEO
+      title={title}
+      description="A heavily optimized description of some guys portfolio and blog"
+      openGraph={{
+        basic: {
+          title: "James Raymond Thompson",
+          type: "test.",
+          image:
+            "https://user-images.githubusercontent.com/5182256/131216951-8f74f425-f775-463d-a11b-0e01ad9fce8d.png",
+        },
+      }}
+      twitter={{
+        creator: "@jraymondt",
+      }}
+      extend={{
+        // extending the default link tags
+        link: [{ rel: "icon", href: "/favicon.ico" }],
+        // extending the default meta tags
+        meta: [
+          {
+            name: "twitter:image",
+            content:
+              "https://user-images.githubusercontent.com/5182256/131216951-8f74f425-f775-463d-a11b-0e01ad9fce8d.png",
+          },
+          { name: "twitter:title", content: "James Raymond Thompson" },
+          { name: "twitter:description", content: "Agent" },
+        ],
+      }}
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={SITE_DESCRIPTION} />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.js"
+      integrity="sha512-BJ/5sR2hFxQTKin/55JQCcMTObShDBAmVjL/3NR/MVcrhyOazJjAgvROem03+HYyGw16SVdSfoWCFGr9syxAKA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"></script>
+    <title>{SITE_TITLE} - {title}</title>
+  </head>
+  <body class="">
+    <Navbar />
+
+    <section class="container mx-auto max-w-screen-xl mt-10 px-8">
+      <slot />
+    </section>
+
+    <Footer />
+  </body>
+</html>
