@@ -1,4 +1,14 @@
 ---
+let counter = 0;
+
+if (Astro.cookies.has("counter")) {
+  const cookie = Astro.cookies.get("counter");
+  const value = cookie?.number();
+  if (value !== undefined && !isNaN(value)) counter = value + 1;
+}
+
+Astro.cookies.set("counter", String(counter));
+
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { capitalize } from "../utils";
@@ -47,6 +57,9 @@ const uniqueTags: string[] = [...new Set(tags)];
           </li>
           <li class="mb-2">
             <a href="https://www.instagram.com/flatlinejim/">Instagram</a>
+          </li>
+          <li class="mb-2">
+            <h3>{counter}</h3>
           </li>
         </ul>
       </div>

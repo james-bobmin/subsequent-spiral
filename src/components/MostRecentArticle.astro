@@ -7,6 +7,16 @@ const { article } = Astro.props;
 interface Props {
   article: CollectionEntry<"blog">;
 }
+
+interface Tag {
+  name: string;
+  value: string;
+}
+
+const tag: Tag = {
+  name: "example",
+  value: "example-value",
+};
 ---
 
 <div class="relative inline-block w-full sm:w-auto cursor-pointer rounded-2xl">
@@ -29,7 +39,7 @@ interface Props {
         <!-- Tags with rounded border -->
         <div class="flex mt-4 justify-center">
           {
-            article.data.tags.map((tag) => (
+            article.data.tags.map((tag: string) => (
               <span class="px-2 py-1 border text-white rounded-full text-xs mr-2">
                 {tag}
               </span>
